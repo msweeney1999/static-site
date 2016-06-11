@@ -10,15 +10,35 @@
     "categories": [
         "Other"
     ],
-    "activationEvents": [
-        "onCommand:extension.sayHello"
+    "activationEvents": [        
+        "onCommand:extension.insertLink",
+        "onCommand:extension.insertFigure"
     ],
     "main": "./extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }]
+        "commands": [
+            {
+                "command": "extension.insertLink",
+                "title": "Insert LINK"
+            },
+            {
+                "command": "extension.insertFigure",
+                "title": "Insert FIGURE"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.insertLink",
+                "key": "ctrl+f5",
+                "mac": "f5",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "extension.insertFigure",
+                "key": "shift+ctrl+f",
+                "when": "editorTextFocus"
+            }
+        ]
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install"
