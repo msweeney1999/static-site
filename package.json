@@ -1,0 +1,29 @@
+{
+    "name": "static-test",
+    "displayName": "static test",
+    "description": "testing",
+    "version": "0.0.1",
+    "publisher": "mark",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.sayHello"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [{
+            "command": "extension.sayHello",
+            "title": "Hello World"
+        }]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "vscode": "^0.11.0"
+    }
+}
